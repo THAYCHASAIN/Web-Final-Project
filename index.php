@@ -1,4 +1,10 @@
-<?php  include 'control/session.php' ?>
+ <?php 
+  session_start();
+  if(!empty($_SESSION["StudentID"])){  //ถ้าเขียนทำการ login แล้วจะข้ามไปหน้าต่อไป
+      header( "Location: home.php" );  
+  }
+  
+ ?> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -102,10 +108,7 @@
             </div>
 
         </div>
-
         <div class="col-sm-4"></div>
     </div>
-
-
 </body>
 </html>

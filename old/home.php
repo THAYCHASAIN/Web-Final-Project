@@ -30,9 +30,10 @@
                 </button>
                 <a href="home.php" class="navbar-brand" >UP Library Go</a> 
             </div>
-            <div style="color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;">  
-            <button id = "logout" class="btn btn-danger square-btn-adjust" style = "font-weight: bold;">ออกระบบ</button>  
-            </div> 
+        <div style="color: white;
+        padding: 15px 50px 5px 50px;
+        float: right;
+        font-size: 16px;">  <a href="index.php" class="btn btn-danger square-btn-adjust "style = "font-weight: bold;">ออกระบบ</a> </div>
         </nav>   
            <!-- /. NAV TOP  -->
                 <nav class="navbar-default navbar-side" role="navigation">
@@ -83,7 +84,7 @@
                 <div class="row" style ="margin-top: 5%; text-align: center;" > 
                         <div class="col-sm-1"></div> 
                         <div class="col-sm-5">
-                            <img src="assets/img/book/book.jpg" style="high: 30%;" />
+                            <img src="assets/img/book.jpg" style="high: 30%;" />
                         </div> 
                         <div class="col-sm-6">
                             <p style = "font-weight: bold; font-size: 150%; text-align: left; " >BLE : 50:8c:B1:75:23:9D</p>
@@ -117,7 +118,6 @@
         console.log('logout') 
         if (confirm("คุณต้องการออกจากระบบใช่ไหม ?") == true) { 
             $.get("/control/logout.php"); 
-            window.location.href = 'index.php';
         } 
     }); 
 </script> 

@@ -1,4 +1,4 @@
-﻿<?php include 'control/session.php' ?>
+<?php // include 'control/session.php' ?>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -30,25 +30,25 @@
                 </button>
                 <a href="home.php" class="navbar-brand" >UP Library Go</a> 
             </div>
-            <div style="color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;">  
-            <button id = "logout" class="btn btn-danger square-btn-adjust" style = "font-weight: bold;">ออกระบบ</button>  
-            </div> 
+        <div style="color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;">  
+                <button id = "logout" class="btn btn-danger square-btn-adjust" style = "font-weight: bold;">ออกระบบ</button>  
+        </div> 
         </nav>   
            <!-- /. NAV TOP  -->
                 <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
-                    <li class="text-center">
-                        <img src="assets/img/<?php echo $_SESSION['img'];?>" style="width: 40%;"  class="user-image img-responsive"/>
-                        <a href="editadmin.php" style="font-weight: bold; font-size: 20px;"><?php echo $_SESSION['Name'];?></a>
-                    </li>
+				<li class="text-center">
+                    <img src="assets/img/user.png" style="width: 40%;"  class="user-image img-responsive"/>
+                    <a href="editadmin.php" style="font-weight: bold; font-size: 20px;">mint preeya</a>
+					</li>
 				
                     <li>
-                        <a class = "active-menu" href="home.php"><i class="fa fa-home fa-2x"></i>  หน้าหลัก</a>
+                        <a  href="home.php"><i class="fa fa-home fa-2x"></i>  หน้าหลัก</a>
                     </li>
                     <li>
                         <a  href="book.php"><i class="fa fa-book fa-2x"></i> รายการหนังสือ</a>
-                    </li> 
+                    </li>      
                      <li>
                         <a  href="borrow-return.php" ><i class="glyphicon glyphicon-list-alt fa-2x"></i> ข้อมูลการยืม-คืน</a>
                     </li>	
@@ -68,7 +68,7 @@
                         <a  href="editmember.php"><i class="fa fa-user fa-2x"></i> ผู้ใช้บริการห้องสมุด</a>
                     </li>       
                     <li >
-                        <a  href="setting.php"><i class="fa fa-cog fa-2x"></i> ตั้งค่า</a>
+                        <a  class = "active-menu"  href="setting.php"><i class="fa fa-cog fa-2x"></i> ตั้งค่า</a>
                     </li>
                 </ul>
             </div>
@@ -76,23 +76,11 @@
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper" style=" background-image: url('assets/img/bg.jpg');"  >
             
-            <div id="page-inner">
-                <div class="row">
-                <h1 class="fa fa-star fa-3x" style = "font-weight: bold; text-align: left; margin-left:5%; " > แนะนำหนังสือใหม่</h1>
-                </div>
-                <div class="row" style ="margin-top: 5%; text-align: center;" > 
-                        <div class="col-sm-1"></div> 
-                        <div class="col-sm-5">
-                            <img src="assets/img/book/book.jpg" style="high: 30%;" />
-                        </div> 
-                        <div class="col-sm-6">
-                            <p style = "font-weight: bold; font-size: 150%; text-align: left; " >BLE : 50:8c:B1:75:23:9D</p>
-                            <p style = "font-weight: bold; font-size: 150%; text-align: left; " >เลขที่หนังสือ : 002</p>
-                            <p style = "font-weight: bold; font-size: 150%; text-align: left; " >ชื่อหนังสือ : Computer Architecture</p>
-                            <p style = "font-weight: bold; font-size: 150%; text-align: left; " >ผู้แต่ง : William Stallings</p>
-                            <p style = "font-weight: bold; font-size: 150%; text-align: left; " >ประเภท : ภาษาคอมพิวเตอร์</p>
-                        </div>
-                </div>
+            <div id="page-inner" >
+            <div class="row">
+                <h1 class="	fa fa-gear fa-3x" style = "font-weight: bold; text-align: left; margin-left:5%; " > ตั้งค่า</h1>
+            </div> 
+                
             </div>
         </div>     
               
@@ -114,10 +102,9 @@
 </html>
 <script> 
     $("#logout").click(function(){ 
-        console.log('logout') 
-        if (confirm("คุณต้องการออกจากระบบใช่ไหม ?") == true) { 
-            $.get("/control/logout.php"); 
-            window.location.href = 'index.php';
-        } 
+    console.log('logout') 
+    if (confirm("คุณต้องการออกจากระบบใช่ไหม ?") == true) { 
+    $.get("/control/logout.php"); 
+    } 
     }); 
 </script> 

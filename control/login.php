@@ -15,7 +15,19 @@
         // output data of each row
         while($row = $result->fetch_assoc()) {
             if($row["Password"] === $password){
-                $_SESSION["Username"] = $row["StudentID"];
+
+
+                $_SESSION["id"] = $row["id"];
+                $_SESSION["StudentID"] = $row["StudentID"];
+                $_SESSION["Password"] = $row["Password"];
+                $_SESSION["Name"] = $row["Name"];
+                $_SESSION["Phone"] = $row["Phone"];
+                $_SESSION["Email"] = $row["Email"];
+                $_SESSION["img"] = $row["img"];
+                $_SESSION["Sex"] = $row["Sex"];
+                $_SESSION["Status"] = $row["Status"];
+
+                
                 echo $row["Name"]; 
             }else{
                 echo 'Password';
